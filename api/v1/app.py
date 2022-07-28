@@ -4,7 +4,7 @@
 from flask import Flask
 from models import storage
 from api.v1.views import app_views
-import os
+from os import getenv
 
 # create variable app, instance of Flask
 app = Flask(__name__)

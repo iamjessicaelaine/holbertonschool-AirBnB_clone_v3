@@ -82,6 +82,8 @@ class DBStorage:
             return None
         # get dictionary of all objects in given class for search
         objdict = self.all(cls)
+        if len(objdict) == 0:
+           return None
         # find obj id in dictionary, objs are values in our dict
         for obj in objdict.values():
             if obj.id == id:

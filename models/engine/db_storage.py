@@ -82,8 +82,7 @@ class DBStorage:
             for obj in objdict.values():
                 if obj.id == id:
                     return obj
-        elif:
-            return None
+        return None
 
     def count(self, cls=None):
         """counts the number of objects in db storage"""

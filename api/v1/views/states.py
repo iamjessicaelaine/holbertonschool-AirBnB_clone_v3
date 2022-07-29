@@ -21,8 +21,7 @@ def selectstate(state_id):
     """retrieves a state obj based on provided state id"""
     # get dictionary of all states
     stateobjs = storage.all(State).values()
-    if len(stateobjs) != 0:
-        for stateobj in stateobjs:
-            if stateobj.id == state_id:
-                return jsonify(stateobj.todict())
-        abort(404)
+    for stateobj in stateobjs:
+        if stateobj.id == state_id:
+            return jsonify(stateobj.to_dict())
+    abort(404)

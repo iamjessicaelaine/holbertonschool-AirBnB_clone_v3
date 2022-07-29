@@ -77,6 +77,9 @@ class DBStorage:
 
     def get(self, cls, id):
         """retrieve one obj based on the class and its id"""
+        # return None if cls and id are not given
+        if not cls or not id:
+            return None
         # get dictionary of all objects in given class for search
         objdict = self.all(cls)
         # find obj id in dictionary, objs are values in our dict

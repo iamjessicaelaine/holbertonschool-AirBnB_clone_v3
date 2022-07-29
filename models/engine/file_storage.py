@@ -72,6 +72,8 @@ class FileStorage:
     def get(self, cls, id):
         """retrieve an obj based the class and it's id"""
         # get filtered dictionary of objs by cls
+        if not cls or not id:
+           return None
         objdict = self.all(cls)
         if len(objdict) == 0:
             return None

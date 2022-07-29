@@ -79,7 +79,7 @@ class DBStorage:
         """retrieve one obj based on the class and its id"""
         if cls and id:
             objdict = self.all(cls)
-            for obj in objdict.values():
+            for obj in objdict.keys():
                 if obj.id == id:
                     return obj
                 else:

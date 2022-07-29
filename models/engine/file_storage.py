@@ -72,18 +72,13 @@ class FileStorage:
     def get(self, cls, id):
         """retrieve an obj based the class and it's id"""
         # get filtered dictionary of objs by cls
-        if not cls or not id:
-           return None
         objdict = self.all(cls)
-        if len(objdict) == 0:
-            return None
-        else:
+        if len(objdict) != 0:
             # search dict values for id of obj to get
             for obj in objdict.values():
                 if obj.id == id:
                     return obj
-                else:
-                    return None
+        return None
 
     def count(self, cls=None):
         """counts number of objects in file storage w/ optional filter"""
